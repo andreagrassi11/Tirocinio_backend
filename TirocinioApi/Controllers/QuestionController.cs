@@ -87,7 +87,9 @@ public class QuestionController : ControllerBase
         var questionDb = _context.Question.Find(id);
 
         if (questionDb == null)
+        {
             return NotFound();
+        }
 
         _context.Question.Remove(questionDb);
         _context.SaveChanges();

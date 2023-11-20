@@ -71,7 +71,7 @@ public class AnswerController : ControllerBase
         {
             return NotFound();
         }
-        
+
         answerDb.Description = answer.Description;
 
         _context.SaveChanges();
@@ -85,7 +85,9 @@ public class AnswerController : ControllerBase
         var answerDb = _context.Answer.Find(id);
 
         if (answerDb == null)
+        {
             return NotFound();
+        }
 
         _context.Answer.Remove(answerDb);
         _context.SaveChanges();

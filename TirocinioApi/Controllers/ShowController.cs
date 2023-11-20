@@ -44,7 +44,9 @@ public class ShowController : ControllerBase
                 .ToList();
 
         if (result == null)
+        {
             return NotFound();  
+        }
 
         return new JsonResult(Ok(result));
     }
@@ -93,7 +95,9 @@ public class ShowController : ControllerBase
         var showDb = _context.Show.Find(id);
 
         if (showDb == null)
+        {
             return NotFound();
+        }
 
         _context.Show.Remove(showDb);
         _context.SaveChanges();

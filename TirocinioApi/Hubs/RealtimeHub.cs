@@ -7,7 +7,7 @@ namespace TirocinioApi.Hubs;
 public class RealtimeHub : Hub
 {
     private readonly ILogger<RealtimeHub> _logger;
-    private int _connectedClientsCount = 0;
+    private int _connectedClientsCount;
 
 
     public RealtimeHub(ILogger<RealtimeHub> logger)

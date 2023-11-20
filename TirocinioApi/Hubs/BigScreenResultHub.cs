@@ -7,7 +7,7 @@ namespace TirocinioApi.Hubs;
 public class BigScreenResultHub : Hub
 {
     private readonly ILogger<RealtimeHub> _logger;
-    private static int _connectedClientsCount = 0;
+    private int _connectedClientsCount;
 
 
     public BigScreenResultHub(ILogger<RealtimeHub> logger)
