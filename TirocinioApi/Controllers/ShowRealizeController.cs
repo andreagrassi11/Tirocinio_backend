@@ -29,7 +29,9 @@ public class ShowRealizeController : ControllerBase
         var result = _context.ShowRealize.Find(id);
 
         if (result == null)
+        {
             return NotFound();
+        }
 
         return new JsonResult(Ok(result));
     }
@@ -61,7 +63,9 @@ public class ShowRealizeController : ControllerBase
         }
 
         if (combinedData == null)
+        {
             return NotFound();
+        }
 
         return new JsonResult(Ok(combinedData));
     }
@@ -95,7 +99,9 @@ public class ShowRealizeController : ControllerBase
         var showDb = _context.ShowRealize.Find(showResId);
 
         if (showDb == null)
+        {
             return NotFound();
+        }
 
         showDb.Do = true;
         _context.SaveChanges();

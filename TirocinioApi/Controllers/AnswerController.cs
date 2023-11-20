@@ -27,7 +27,9 @@ public class AnswerController : ControllerBase
         var result = _context.Answer.Find(id);
 
         if (result == null)
+        {
             return NotFound();
+        }
 
         return new JsonResult(Ok(result));
     }
@@ -66,8 +68,10 @@ public class AnswerController : ControllerBase
         var answerDb = _context.Answer.Find(answer.Id);
 
         if (answerDb == null)
+        {
             return NotFound();
-
+        }
+        
         answerDb.Description = answer.Description;
 
         _context.SaveChanges();

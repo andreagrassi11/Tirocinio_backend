@@ -39,7 +39,9 @@ public class QuestionController : ControllerBase
         var result = _context.Question.Find(id);
 
         if (result == null)
+        {        
             return NotFound();
+        }
 
         return new JsonResult(Ok(result));
     }
@@ -68,7 +70,9 @@ public class QuestionController : ControllerBase
         var questionDb = _context.Question.Find(question.Id);
 
         if (questionDb == null)
+        {
             return NotFound();
+        }
 
         questionDb.Text = question.Text;
 

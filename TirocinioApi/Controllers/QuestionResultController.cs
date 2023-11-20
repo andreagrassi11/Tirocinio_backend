@@ -39,7 +39,9 @@ public class QuestionResultController : ControllerBase
         var result = _context.QuestionResult.Find(id);
 
         if (result == null)
+        {
             return NotFound();
+        }
 
         return new JsonResult(Ok(result));
     }

@@ -30,7 +30,9 @@ public class UserShowController : ControllerBase
                 .ToList();
 
         if (result == null)
+        {
             return NotFound();
+        }
 
         return new JsonResult(Ok(result));
     }

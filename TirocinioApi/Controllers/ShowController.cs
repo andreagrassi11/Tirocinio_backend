@@ -28,7 +28,9 @@ public class ShowController : ControllerBase
         var result = _context.Show.Find(id);
 
         if (result == null)
+        {
             return NotFound();
+        }
 
         return new JsonResult(Ok(result));
     }
@@ -73,7 +75,9 @@ public class ShowController : ControllerBase
         var showDb = _context.Show.Find(show.Id);
 
         if(showDb == null)
+        {
             return NotFound();
+        }
 
         showDb.Title = show.Title;
         showDb.Duration = show.Duration;
